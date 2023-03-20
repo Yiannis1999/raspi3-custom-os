@@ -18,7 +18,7 @@ kernel8.img: kernel.elf
 image.img:
 	dd if=/dev/zero of=image.img bs=1M count=1
 	mkfs.fat -F 32 image.img
-	mkdir /mnt/image
+	mkdir -p /mnt/image
 	mount image.img /mnt/image
 	cp ./COUNTER /mnt/image
 	umount /mnt/image
